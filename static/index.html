@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Interview Simulator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="background-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <h1>AI Interview Simulator</h1>
+            <p>Elevate your technical interviewing with semantic intelligence</p>
+        </header>
+
+        <main class="glass-panel">
+            <div class="controls">
+                <div class="control-group">
+                    <label for="difficulty">Select Difficulty</label>
+                    <select id="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+                <button id="load-question-btn" class="btn primary-btn">Load Random Question</button>
+            </div>
+
+            <div class="question-section">
+                <div class="label-badge">Question</div>
+                <h2 id="question-text">Select a difficulty and load a question to begin.</h2>
+            </div>
+
+            <div class="answer-section">
+                <label for="user-answer" class="label-badge">Your Answer</label>
+                <textarea id="user-answer" placeholder="Type your answer here... Be as detailed as possible." rows="6"></textarea>
+                <button id="submit-btn" class="btn submit-btn" disabled>Evaluate Answer</button>
+            </div>
+            
+            <div id="loader" class="loader hidden">
+                <div class="spinner"></div>
+                <p>Analyzing semantic intelligence...</p>
+            </div>
+
+            <div id="results-panel" class="results-panel hidden glass-panel inner-panel">
+                <h3>Evaluation Results</h3>
+                <div class="score-grid">
+                    <div class="score-card main-score">
+                        <div class="score-value" id="final-score">0</div>
+                        <div class="score-label">Final Score</div>
+                    </div>
+                    <div class="score-card">
+                        <div class="score-value" id="semantic-score">0</div>
+                        <div class="score-label">Semantic Similarity</div>
+                    </div>
+                    <div class="score-card">
+                        <div class="score-value" id="grammar-score">0</div>
+                        <div class="score-label">Grammar Score</div>
+                    </div>
+                    <div class="score-card">
+                        <div class="score-value" id="fluency-score">0</div>
+                        <div class="score-label">Fluency Score</div>
+                    </div>
+                    <div class="score-card">
+                        <div class="score-value" id="keyword-score">0</div>
+                        <div class="score-label">Keyword Match</div>
+                    </div>
+                </div>
+                
+                <div class="correction-section">
+                    <h4>Grammar Corrected Version</h4>
+                    <p id="corrected-text">-</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
